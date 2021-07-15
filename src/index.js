@@ -56,13 +56,18 @@ function Login() {
 
 ReactDOM.render(<BrowserRouter>
   <Navbar></Navbar>
-  <Route exact path="/">
-    <Home />
-  </Route>
-  <Route path="/about">
-    <About />
-  </Route>
-  <Route path="/login">
-    <Login />
-  </Route>
+  <Switch>
+    <Route exact path="/">
+      <Home />
+    </Route>
+    <Route path="/about">
+      <About />
+    </Route>
+    <Route path="/login">
+      <Login />
+    </Route>
+    <Route path="*">
+      <h1>404 no found</h1>
+    </Route>
+  </Switch>
 </BrowserRouter>, document.getElementById("root"));
